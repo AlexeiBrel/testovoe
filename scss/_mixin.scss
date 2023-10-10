@@ -1,0 +1,52 @@
+@mixin font($style, $weight, $size, $height, $spacing, $color) {
+    font-family: "Lexend", sans-serif;
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+    letter-spacing: $spacing;
+    color: $color;
+}
+
+@mixin link() {
+    a {
+        display: inline-block;
+        @include font(normal, 400, 16px, 20px, 0, #ffffff);
+        transition: all 0.2s ease;
+        position: relative;
+    }
+
+    a::after {
+        content: "";
+        display: block;
+        right: 0;
+        position: absolute;
+        height: 1.5px;
+        width: 0;
+        bottom: -5px;
+        transition: all 0.2s ease;
+        background: #478bf9;
+    }
+
+    a:hover::after {
+        width: 100%;
+        left: 0;
+    }
+
+    a:hover {
+        color: #478bf9;
+    }
+}
+
+@mixin button($borderRadius, $borderColor, $bg) {
+    display: block;
+    border-radius: $borderRadius;
+    border: 2px solid $borderColor;
+    padding: 14px;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    background: $bg;
+    @include font(normal, 400, 16px, 20px, 0, #ffffff);
+    cursor: pointer;
+    text-align: center;
+}

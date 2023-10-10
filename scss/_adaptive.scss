@@ -1,0 +1,491 @@
+@media all and (max-width: 1439px) {
+    .main {
+        flex: 1 1 auto;
+
+        .hero {
+            flex-direction: column;
+            align-items: center;
+            padding: 70px 0;
+            gap: 32px;
+
+            &__text {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            &__title {
+                font-size: 80px;
+                line-height: 80px;
+                margin-bottom: 24px;
+            }
+
+            &__subtitle {
+                font-size: 30px;
+                line-height: 30px;
+                width: max-content;
+            }
+
+            &__btn {
+                padding: 20px 62px;
+                font-size: 22px;
+            }
+
+            &__banners {
+                max-width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                height: 335px;
+                flex-grow: 1;
+            }
+
+            &__fish {
+                position: absolute;
+                width: 100%;
+                height: 80px;
+            }
+
+            @keyframes swim1 {
+                0% {
+                    transform: translateX(-50px);
+                }
+                100% {
+                    transform: translateX(-50px);
+                }
+                50% {
+                    transform: translateX(30%);
+                }
+            }
+
+            @keyframes swim2 {
+                0% {
+                    transform: translateX(10px);
+                }
+                100% {
+                    transform: translateX(10px);
+                }
+                50% {
+                    transform: translateX(-20%);
+                }
+            }
+
+            @keyframes swim3 {
+                0% {
+                    transform: translateX(-80px);
+                }
+                100% {
+                    transform: translateX(-80px);
+                }
+                50% {
+                    transform: translateX(20%);
+                }
+            }
+
+            .fish1 {
+                background: url(../img/line_mobile3.png) center no-repeat;
+                top: 0;
+                background-size: contain;
+            }
+            .fish2 {
+                background: url(../img/line_mobile2.png) center no-repeat;
+                top: 0;
+                bottom: 0;
+                margin: auto 0;
+                background-size: contain;
+            }
+            .fish3 {
+                background: url(../img/line_mobile1.png) center no-repeat;
+                bottom: 0;
+                background-size: contain;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1280px) {
+    .header {
+        &__logo {
+            display: none;
+        }
+
+        &__menu {
+            justify-content: flex-start;
+        }
+    }
+}
+
+@media all and (max-width: 1023px) {
+    .header {
+        &__wrap {
+            justify-content: flex-end;
+            border: 2px solid #478bf9;
+            padding: 10px 14px;
+        }
+
+        &__container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: fixed;
+            left: -100%;
+            top: 87px;
+            bottom: 0;
+            min-height: 100vh;
+            max-width: 100%;
+            width: 100%;
+            transition: left 0.3s ease-in-out;
+            background: #110a1d;
+            padding: 0 10px;
+            z-index: 2;
+        }
+
+        &__container.active {
+            left: 0;
+        }
+
+        &__menu {
+            flex-grow: 0;
+            width: 100%;
+            padding: 30px 0;
+            max-width: 360px;
+            width: 100%;
+        }
+
+        &__list {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            margin: auto;
+            gap: 5px;
+
+            li {
+                width: 100%;
+                border-radius: 28px;
+                border: 2px solid #478bf9;
+                background: #110a1d;
+                padding: 13px 20px;
+            }
+
+            a {
+                font-size: 18px;
+            }
+        }
+
+        &__btns {
+            display: flex;
+            flex-direction: column;
+            max-width: 360px;
+            width: 100%;
+
+            &-select {
+                display: none;
+            }
+        }
+
+        .select-hidden {
+            display: block;
+            width: 36px;
+            height: 36px;
+            padding: 0;
+            background: url(../img/icons/planet.svg) no-repeat center;
+            background-size: 20px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        &__close {
+            display: flex;
+            flex-direction: column;
+            width: 25px;
+            height: 19px;
+            position: relative;
+            z-index: 3;
+            cursor: pointer;
+        }
+
+        &__burger {
+            height: 3px;
+            width: 100%;
+            background: rgb(255, 255, 255);
+            border: none;
+            margin: auto;
+            transition: all 0.2s;
+            cursor: pointer;
+            overflow: hidden;
+
+            &:before {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                content: "";
+                display: block;
+                height: 3px;
+                background: rgb(255, 255, 255);
+                transition: all 0.5s;
+                border: none;
+            }
+            &:after {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                content: "";
+                display: block;
+                height: 3px;
+                background: rgb(255, 255, 255);
+                transition:
+                    transform 0.5s,
+                    width 2s;
+                border: none;
+            }
+            &.active {
+                height: 0;
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    transform: rotate(45deg);
+                    top: 100%;
+                    margin-top: -40%;
+                    left: 0;
+                    margin-left: 0;
+                }
+                &:after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    transform: rotate(-45deg);
+                    top: 100%;
+                    margin-top: -40%;
+                    left: 0;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    .main {
+        .hero {
+            &__btn {
+                padding: 20px 62px;
+                font-size: 22px;
+                margin-top: 30px;
+            }
+
+            &__title {
+                font-size: 56px;
+                line-height: 50px;
+                margin-bottom: 16px;
+            }
+
+            &__subtitle {
+                font-size: 26px;
+                line-height: 26px;
+                width: 100%;
+                word-wrap: break-word;
+            }
+
+            &__blog {
+                margin-top: 32px;
+
+                &-title {
+                    font-size: 32px;
+                    margin-bottom: 18px;
+                }
+            }
+
+            .blog {
+                max-width: 470px;
+                padding: 10px 16px 10px 10px;
+                border-radius: 50px;
+
+                &__article {
+                    padding: 16px 25px;
+                    border-radius: 40px;
+
+                    &-title {
+                        @include font(normal, 400, 20px, 20px, 0, #ffffff);
+                    }
+                }
+
+                &__article.active {
+                    background: #478bf9;
+                }
+            }
+        }
+    }
+
+    .footer {
+        border-radius: 64px 64px 0px 0px;
+        border-top: 4px solid #478bf9;
+        border-right: 4px solid #478bf9;
+        border-left: 4px solid #478bf9;
+        background: #1e1231;
+        padding: 40px 20px 24px;
+
+        &__wrap {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+
+            a {
+                font-size: 14px;
+            }
+        }
+
+        &__text {
+            margin-left: 0;
+            margin-right: auto;
+            font-size: 14px;
+        }
+
+        &__links {
+            li::before {
+                width: 27px;
+                height: 27px;
+                background-size: contain;
+            }
+        }
+
+        &__link {
+            width: 27px;
+            height: 27px;
+        }
+    }
+}
+
+@media all and (max-width: 767px) {
+    .main {
+        .hero {
+            &__btn {
+                padding: 15px 25px;
+                font-size: 18px;
+                margin-top: 24px;
+                width: auto;
+            }
+
+            &__title {
+                font-size: 46px;
+                margin-bottom: 12px;
+            }
+
+            &__subtitle {
+                font-size: 20px;
+            }
+
+            &__banners {
+                height: 280px;
+            }
+
+            .fish1 {
+                background: url(../img/line_mobile3.png) center no-repeat;
+                background-size: cover;
+            }
+            .fish2 {
+                background: url(../img/line_mobile2.png) center no-repeat;
+                background-size: cover;
+            }
+            .fish3 {
+                background: url(../img/line_mobile1.png) center no-repeat;
+                background-size: cover;
+            }
+
+            @keyframes swim1 {
+                0% {
+                    transform: translateX(-50px);
+                }
+                100% {
+                    transform: translateX(-50px);
+                }
+                50% {
+                    transform: translateX(15%);
+                }
+            }
+
+            @keyframes swim2 {
+                0% {
+                    transform: translateX(10px);
+                }
+                100% {
+                    transform: translateX(10px);
+                }
+                50% {
+                    transform: translateX(-15%);
+                }
+            }
+
+            @keyframes swim3 {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(0);
+                }
+                50% {
+                    transform: translateX(15%);
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 420px) {
+    .main {
+        .hero {
+            &__btn {
+                width: 100%;
+            }
+
+            .blog {
+                max-width: 470px;
+                padding: 10px 16px 10px 10px;
+                border-radius: 50px;
+
+                &__article {
+                    padding: 16px 28px;
+                    border-radius: 40px;
+
+                    &-title {
+                        font-size: 16px;
+                    }
+                }
+
+                &__article.active {
+                    background: #478bf9;
+                }
+            }
+
+            &__banners {
+                height: 200px;
+            }
+
+            .fish1 {
+                background: url(../img/line_mobile3.png) center no-repeat;
+                background-size: 650px;
+            }
+            .fish2 {
+                background: url(../img/line_mobile2.png) center no-repeat;
+                background-size: 650px;
+            }
+            .fish3 {
+                background: url(../img/line_mobile1.png) center no-repeat;
+                background-size: 650px;
+            }
+        }
+    }
+}
